@@ -26,6 +26,9 @@ This short and simple Kata should be performed using Test Driven Development (TD
     - The key abstraction of information in REST for resources are defined by Board and Player. Those can be reached below by groups. Each resource group has descriptions that can be seen expanding by the Show/Hide link. It was named by "REST Resource Naming Guide" ref: https://restfulapi.net/resource-naming/.
  - 🎯 So please commit all the steps you went through to reach the final solution. It will help us to understand your way of thinking.
     - ✔ Steps by TDD approach
+    !()[https://i.imgur.com/acmyARH.png]
+    - This is just a sample of how to use TDD, Conventional Commits, organizing by Git branches. The base TDD lifecycle is RED > GREEN > Refactoty, so we used this as scope os commit, like as, "feat(red): message", "feat(green)", "feat(refactory): message" and it also should be fix(scope) or BREAKING CHANGE(scope).
+    1. (feature/1/scructure)[https://github.com/2021-DEV1-075/Tennis/tree/feature/1/scructure] This is the first branch, for submiting the scructure only.
     - Can be reached in the repository branches.
  - 🎯 Please respect these few requirements.
     - ✔ This is the list of requirements.
