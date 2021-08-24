@@ -3,6 +3,7 @@ package be.bnpparibasfortis.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,22 +29,22 @@ public class Board implements Serializable {
 	@Column(name = "ID")
 	private Long id;
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "PLAYER_ONE_ID", referencedColumnName = "ID")
 	@ApiModelProperty(value = "The Player One", required = true)
 	private Player playerOne;
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "PLAYER_TWO_ID", referencedColumnName = "ID")
 	@ApiModelProperty(value = "The Player Two", required = true)
 	private Player playerTwo;
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "SCORE_ONE_ID", referencedColumnName = "ID")
 	@ApiModelProperty(value = "The Sore for Player One", required = true)
 	private Score scoreOne;
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "SCORE_TWO_ID", referencedColumnName = "ID")
 	@ApiModelProperty(value = "The Score for Player Two", required = true)
 	private Score scoreTwo;
