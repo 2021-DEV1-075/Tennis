@@ -1,5 +1,10 @@
 package be.bnpparibasfortis.enums;
 
+import java.util.Optional;
+import java.util.stream.Stream;
+
+import be.bnpparibasfortis.config.MessageEnum;
+import be.bnpparibasfortis.config.MessageSource;
 import be.bnpparibasfortis.exception.BusinessException;
 
 public enum ScoreEnum {
@@ -27,7 +32,10 @@ public enum ScoreEnum {
 	}
 
 	public static String getDisplay(Integer score) throws BusinessException {
-		return null;
+		Stream<ScoreEnum> stream = Stream.of(ScoreEnum.values());
+		Optional<ScoreEnum> result = stream.filter(s -> s.getScore() == score).findFirst();
+		return result.orElseThrow(() -> new BusinessException(MessageSource.get().message(MessageEnum.ERR03, score)))
+				.getDisplay();
 	}
 
 	public void setDisplay(String display) {
