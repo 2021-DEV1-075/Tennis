@@ -44,6 +44,7 @@ public class SwaggerConfig {
 
 				+ "<li>" + "&#127919; We expect an application that we can run and fulfil the requirements." + "<dl>"
 				+ "  <dt><h4><span style='color:green;'>&#10004; </span> Deployable.</h4></dt>"
+				+ "  <dd>http://localhost:8080/swagger-ui.html</dd>"
 				+ "</dl>" + "</li>"
 
 				+ "<li>"

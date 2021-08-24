@@ -6,6 +6,7 @@ This short and simple Kata should be performed using Test Driven Development (TD
 
  - Java 1.8
  - Maven
+ - Local access: http://localhost:8080/swagger-ui.html
 
 ## Requirements for Java position
  - 🎯 Use Java and Spring. a UI is not mandatory (the visual design of the UI is not important) and it can be tested via a command line application or API testing tool (like postman for instance).
