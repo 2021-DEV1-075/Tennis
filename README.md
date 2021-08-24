@@ -28,7 +28,8 @@ This short and simple Kata should be performed using Test Driven Development (TD
     - ✔ Steps by TDD approach
     ![](https://i.imgur.com/acmyARH.png)
     - This is just a sample of how to use TDD, [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), organizing by Git branches. The base TDD lifecycle is RED > GREEN > Refactoty, so we used this as scope os commit, like as, "feat(red): message", "feat(green)", "feat(refactory): message" and it also should be fix(scope) or BREAKING CHANGE(scope).
-    1. [feature/1/scructure](https://github.com/2021-DEV1-075/Tennis/tree/feature/1/scructure) This is the first branch, for submiting the scructure only.
+    1. [feature/1/scructure](https://github.com/2021-DEV1-075/Tennis/tree/feature/1/scructure) This is the 1 branch, for submiting the scructure only.
+    2. [feature/2/services](https://github.com/2021-DEV1-075/Tennis/tree/feature/2/services) This is the 2 branch, for submiting services only.
  - 🎯 Please respect these few requirements.
     - ✔ This is the list of requirements.
     - All of the requirements can be seen here and checked at the repository.
