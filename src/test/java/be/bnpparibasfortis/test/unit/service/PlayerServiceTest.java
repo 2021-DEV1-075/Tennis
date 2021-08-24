@@ -18,6 +18,7 @@ import be.bnpparibasfortis.service.PlayerService;
 
 @SpringBootTest
 @DisplayName("A unit test for PlayerService")
+//@ActiveProfiles("test")
 public class PlayerServiceTest {
 
 	private static final Long PLAYER_ID = 1L;
@@ -33,6 +34,8 @@ public class PlayerServiceTest {
     @Order(1)
     @DisplayName("Tests the creation of a players.")
 	public void save() throws BusinessException {
+		Mockito.when(playerRepository.save(Mockito.any(Player.class)))
+		.thenReturn(new Player(PLAYER_ID, PLAYER_NAME));
 		Player player = playerService.save(PLAYER_NAME);
 		Assertions.assertEquals(PLAYER_NAME, player.getName());
 		Assertions.assertEquals(PLAYER_ID, player.getId());
@@ -43,6 +46,7 @@ public class PlayerServiceTest {
     @DisplayName("Tests the creation of a players.")
 	public void getById() throws BusinessException {
 		Player player = new Player(PLAYER_ID, PLAYER_NAME);
+		Mockito.when(playerRepository.findById(PLAYER_ID)).thenReturn(Optional.ofNullable(player));
 		Assertions.assertEquals(PLAYER_NAME, player.getName());
 		Assertions.assertEquals(PLAYER_ID, player.getId());
 	}
