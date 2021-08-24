@@ -35,6 +35,8 @@ public class ScoreServiceTest {
 	@DisplayName("Tests the retrieving of a score.")
 	public void getById() throws BusinessException {
 		Assertions.assertDoesNotThrow(() -> {
+			Mockito.when(scoreRepository.findById(SCORE_ID))
+					.thenReturn(Optional.ofNullable(new Score(SCORE_ID, DEFAULT_POINTS)));
 			Score score = scoreService.getById(SCORE_ID);
 			Assertions.assertAll("score check",
 					() -> Assertions.assertTrue(score.equals(new Score(SCORE_ID, DEFAULT_POINTS))));
@@ -46,7 +48,11 @@ public class ScoreServiceTest {
 	@DisplayName("Tests the update of a score.")
 	public void update() throws BusinessException {
 		Assertions.assertDoesNotThrow(() -> {
+			Mockito.when(scoreRepository.findById(SCORE_ID))
+					.thenReturn(Optional.ofNullable(new Score(SCORE_ID, DEFAULT_POINTS)));
+
 			Integer newPoints = DEFAULT_POINTS + INCREASE;
+			Mockito.when(scoreRepository.save(Mockito.any(Score.class))).thenReturn(new Score(SCORE_ID, newPoints));
 
 			Score score = scoreService.update(SCORE_ID, newPoints);
 
