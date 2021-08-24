@@ -17,7 +17,7 @@ import be.bnpparibasfortis.repository.ScoreRepository;
 import be.bnpparibasfortis.service.ScoreService;
 
 @SpringBootTest
-@DisplayName("A unit test for ScoreService")
+@DisplayName("A unit test for Score Service")
 public class ScoreServiceTest {
 
 	private static final Integer DEFAULT_POINTS = 0;

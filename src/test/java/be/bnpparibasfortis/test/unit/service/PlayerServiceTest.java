@@ -26,24 +26,23 @@ public class PlayerServiceTest {
 
 	@Mock
 	private PlayerRepository playerRepository;
-	
+
 	@InjectMocks
 	private PlayerService playerService;
 
 	@Test
-    @Order(1)
-    @DisplayName("Tests the creation of a players.")
+	@Order(1)
+	@DisplayName("Tests the creation of a players.")
 	public void save() throws BusinessException {
-		Mockito.when(playerRepository.save(Mockito.any(Player.class)))
-		.thenReturn(new Player(PLAYER_ID, PLAYER_NAME));
+		Mockito.when(playerRepository.save(Mockito.any(Player.class))).thenReturn(new Player(PLAYER_ID, PLAYER_NAME));
 		Player player = playerService.save(PLAYER_NAME);
 		Assertions.assertEquals(PLAYER_NAME, player.getName());
 		Assertions.assertEquals(PLAYER_ID, player.getId());
 	}
-	
+
 	@Test
-    @Order(2)
-    @DisplayName("Tests the creation of a players.")
+	@Order(2)
+	@DisplayName("Tests the creation of a players.")
 	public void getById() throws BusinessException {
 		Player player = new Player(PLAYER_ID, PLAYER_NAME);
 		Mockito.when(playerRepository.findById(PLAYER_ID)).thenReturn(Optional.ofNullable(player));
@@ -51,4 +50,3 @@ public class PlayerServiceTest {
 		Assertions.assertEquals(PLAYER_ID, player.getId());
 	}
 }
-

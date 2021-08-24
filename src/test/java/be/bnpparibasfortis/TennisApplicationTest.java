@@ -9,6 +9,5 @@ public class TennisApplicationTest {
 	@Test
 	public void contextLoads() {
 	}
-	
-	
+
 }

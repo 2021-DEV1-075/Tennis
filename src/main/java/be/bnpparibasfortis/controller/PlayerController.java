@@ -25,25 +25,23 @@ public class PlayerController {
 	PlayerService playerService;
 
 	public PlayerController() {
-    }
-	
+	}
+
 	public PlayerController(PlayerService playerService) {
-        this.playerService = playerService;
-    }
-	
+		this.playerService = playerService;
+	}
+
 	@ApiOperation(value = "Retrieves the player.")
 	@GetMapping("/${playerId}")
-	public Player get(@ApiParam(value = "Player Id", required = true) 
-	                  @PathVariable(name = "playerId") 
-	                  Long playerId) throws BusinessException {
+	public Player get(@ApiParam(value = "Player Id", required = true) @PathVariable(name = "playerId") Long playerId)
+			throws BusinessException {
 		return playerService.getById(playerId);
 	}
 
 	@ApiOperation(value = "Creates a new player.", response = Player.class)
 	@PostMapping("/")
-	public Player save(@RequestBody 
-			           @ApiParam(value = "The new player.", required = true) 
-			           PlayerRequest body) throws BusinessException {
+	public Player save(@RequestBody @ApiParam(value = "The new player.", required = true) PlayerRequest body)
+			throws BusinessException {
 		return playerService.save(body.getPlayerName());
 	}
 }

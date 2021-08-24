@@ -49,7 +49,7 @@ public class BoardServiceTest {
 
 	@InjectMocks
 	private BoardService boardService;
-	
+
 	@Test
 	@Order(1)
 	@DisplayName("Tests the creation of a board for 2 players.")
@@ -248,7 +248,7 @@ public class BoardServiceTest {
 	}
 
 	/**
-	 * Default 
+	 * Default
 	 */
 	@Test
 	@Order(9)
@@ -276,7 +276,7 @@ public class BoardServiceTest {
 		mockSavePlayer(id, name);
 		return playerService.save(name);
 	}
-	
+
 	private void mockGetPlayerById(Long playerId, Player player) throws BusinessException {
 		Mockito.when(playerService.getById(playerId)).thenReturn(player);
 	}

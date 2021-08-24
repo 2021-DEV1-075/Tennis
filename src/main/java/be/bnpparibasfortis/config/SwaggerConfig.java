@@ -15,7 +15,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder().title("Kata Tennis API reference for developers").description("<br/>"
 				+ "<h3>About this Kata</h3>"
@@ -44,8 +43,7 @@ public class SwaggerConfig {
 
 				+ "<li>" + "&#127919; We expect an application that we can run and fulfil the requirements." + "<dl>"
 				+ "  <dt><h4><span style='color:green;'>&#10004; </span> Deployable.</h4></dt>"
-				+ "  <dd>http://localhost:8080/swagger-ui.html</dd>"
-				+ "</dl>" + "</li>"
+				+ "  <dd>http://localhost:8080/swagger-ui.html</dd>" + "</dl>" + "</li>"
 
 				+ "<li>"
 				+ "&#127919; We expect you to produce the best code you can possibly provide to us and, later on, that you are able to explain the choices you made. Of course, "
@@ -74,7 +72,7 @@ public class SwaggerConfig {
 				+ "</ol>").termsOfServiceUrl("http://github.com/Malnati").license("MIT License")
 				.licenseUrl("ricardomalnati@gmail.com").version("1.0").build();
 	}
-	
+
 	@Bean
 	public Docket getDocket() {
 		return new Docket(DocumentationType.SWAGGER_2).groupName("tennis-api").apiInfo(this.apiInfo()).select()

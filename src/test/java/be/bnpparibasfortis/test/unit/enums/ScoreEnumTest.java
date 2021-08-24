@@ -20,32 +20,28 @@ import be.bnpparibasfortis.exception.BusinessException;
 public class ScoreEnumTest {
 
 	private static final Integer WRONG_SCORE = -1;
-	
+
 	@InjectMocks
 	private MessageSource messageSource;
 
-    @DisplayName("Tests if all of messages exists.")
+	@DisplayName("Tests if all of messages exists.")
 	@ParameterizedTest
 	@EnumSource(ScoreEnum.class)
 	public void displayByScore(ScoreEnum msg) {
-		Assertions.assertAll("display all check",
-	            () -> {
-	            	Assertions.assertDoesNotThrow(() -> {
-	            		assertNotNull(ScoreEnum.getDisplay(msg.getScore()));
-	            	});
-	            }
-	        );
+		Assertions.assertAll("display all check", () -> {
+			Assertions.assertDoesNotThrow(() -> {
+				assertNotNull(ScoreEnum.getDisplay(msg.getScore()));
+			});
+		});
 	}
 
 	@Test
-    @DisplayName("Tests if a wrong score throws exception.")
+	@DisplayName("Tests if a wrong score throws exception.")
 	public void displayForWrongScore() {
-		Assertions.assertAll("display wrong score check",
-	            () -> {
-	            	Assertions.assertThrows(BusinessException.class, () -> {
-	            		assertNull(ScoreEnum.getDisplay(WRONG_SCORE));
-	            	});
-	            }
-	        );
+		Assertions.assertAll("display wrong score check", () -> {
+			Assertions.assertThrows(BusinessException.class, () -> {
+				assertNull(ScoreEnum.getDisplay(WRONG_SCORE));
+			});
+		});
 	}
 }
