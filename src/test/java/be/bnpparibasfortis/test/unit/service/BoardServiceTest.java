@@ -260,7 +260,6 @@ public class BoardServiceTest {
 			Player playerTwo = savePlayer(PLAYER_TWO_ID, PLAYER_TWO_NAME);
 
 			Board board = new Board(BOARD_ID, playerOne, playerTwo, new Score(0), new Score(1));
-			mockFindBoardById(BOARD_ID, board);
 
 			Assertions.assertTrue(boardService.getById(BOARD_ID).equals(board));
 			String status = boardService.getStatusByBoardId(BOARD_ID);
@@ -272,29 +271,4 @@ public class BoardServiceTest {
 		});
 	}
 
-	private Player savePlayer(Long id, String name) throws BusinessException {
-		mockSavePlayer(id, name);
-		return playerService.save(name);
-	}
-	
-	private void mockGetPlayerById(Long playerId, Player player) throws BusinessException {
-		Mockito.when(playerService.getById(playerId)).thenReturn(player);
-	}
-
-	private void mockFindBoardById(Long boardId, Board board) {
-		Mockito.when(boardRepository.findById(boardId)).thenReturn(Optional.ofNullable(board));
-	}
-
-	private void mockSaveBoard(Player playerOne, Player playerTwo) {
-		Mockito.when(boardRepository.save(Mockito.any(Board.class))).thenReturn(new Board(BOARD_ID, playerOne,
-				playerTwo, new Score(SCORE_ONE_ID, DEFAULT_POINTS), new Score(SCORE_ONE_ID, DEFAULT_POINTS)));
-	}
-
-	private void mockSavePlayer(Long playerId, String playerName) throws BusinessException {
-		Mockito.when(playerService.save(playerName)).thenReturn(new Player(playerId, playerName));
-	}
-
-	private void mockUpdateScore(Long scoreId, Integer points) throws BusinessException {
-		Mockito.when(scoreService.update(scoreId, points)).thenReturn(new Score(scoreId, points));
-	}
 }
