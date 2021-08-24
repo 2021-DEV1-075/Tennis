@@ -18,7 +18,6 @@ import be.bnpparibasfortis.service.PlayerService;
 
 @SpringBootTest
 @DisplayName("A unit test for PlayerService")
-//@ActiveProfiles("test")
 public class PlayerServiceTest {
 
 	private static final Long PLAYER_ID = 1L;
