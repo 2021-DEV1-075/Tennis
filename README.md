@@ -6,6 +6,7 @@ This short and simple Kata should be performed using Test Driven Development (TD
 
  - Java 1.8
  - Maven
+ - Local access: http://localhost:8080/swagger-ui.html
 
 ## Requirements for Java position
  - 🎯 Use Java and Spring. a UI is not mandatory (the visual design of the UI is not important) and it can be tested via a command line application or API testing tool (like postman for instance).
@@ -25,7 +26,11 @@ This short and simple Kata should be performed using Test Driven Development (TD
     - The key abstraction of information in REST for resources are defined by Board and Player. Those can be reached below by groups. Each resource group has descriptions that can be seen expanding by the Show/Hide link. It was named by "REST Resource Naming Guide" ref: https://restfulapi.net/resource-naming/.
  - 🎯 So please commit all the steps you went through to reach the final solution. It will help us to understand your way of thinking.
     - ✔ Steps by TDD approach
-    - Can be reached in the repository branches.
+    ![](https://i.imgur.com/acmyARH.png)
+    - This is just a sample of how to use TDD, [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), organizing by Git branches. The base TDD lifecycle is RED > GREEN > Refactoty, so we used this as scope os commit, like as, "feat(red): message", "feat(green)", "feat(refactory): message" and it also should be fix(scope) or BREAKING CHANGE(scope).
+    1. [feature/1/scructure](https://github.com/2021-DEV1-075/Tennis/tree/feature/1/scructure) This is the 1 branch, for submiting the scructure only.
+    2. [feature/2/services](https://github.com/2021-DEV1-075/Tennis/tree/feature/2/services) This is the 2 branch, for submiting services only.
+    3. [feature/3/end2end](https://github.com/2021-DEV1-075/Tennis/tree/feature/end2end) This is the 3 branch, for changes after end-to-end testing.
  - 🎯 Please respect these few requirements.
     - ✔ This is the list of requirements.
     - All of the requirements can be seen here and checked at the repository.
