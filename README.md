@@ -31,6 +31,29 @@ This short and simple Kata should be performed using Test Driven Development (TD
     1. [feature/1/scructure](https://github.com/2021-DEV1-075/Tennis/tree/feature/1/scructure) This is the 1 branch, for submiting the scructure only.
     2. [feature/2/services](https://github.com/2021-DEV1-075/Tennis/tree/feature/2/services) This is the 2 branch, for submiting services only.
     3. [feature/3/end2end](https://github.com/2021-DEV1-075/Tennis/tree/feature/end2end) This is the 3 branch, for changes after end-to-end testing.
+    - The Commits:
+    		-feat(red): adding maven libs folder
+    		- feat(red): added http://localhost:8080/swagger-ui.html ref at Swagger page and README.md
+    		- feat(red): format
+    		- feat(red): cleanning
+    		- feat(red): about TDD and the first branch at README and Swagger
+    		- feat(green): fix about TDD and the first branch at README and Swagger
+    		- feat(green): fix about Conventional Commits at README and Swagger
+    		- feat(red): datasource at application.properties
+    		- feat(red): score service unit tests
+    		- feat(green): score service unit tests
+    		- feat(red): player service unit tests
+    		- feat(green): player service unit tests
+    		- feat(refactory): player service unit tests
+    		- feat(red): board service unit tests
+    		- feat(green): board service unit tests
+    		- feat(refactory): about board service and unit tests
+    		- feat(refactory): player n board dtos
+    		- feat(refactory): add player controller
+    		- feat(refactory): add board controller
+    		- feat(red): board and player controller end-to-end
+    		- feat(refactory): board controller end-to-end
+    		- feat(refactory): about board n player end-to-end
  - 🎯 Please respect these few requirements.
     - ✔ This is the list of requirements.
     - All of the requirements can be seen here and checked at the repository.
