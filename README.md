@@ -32,8 +32,8 @@ This short and simple Kata should be performed using Test Driven Development (TD
     2. [feature/2/services](https://github.com/2021-DEV1-075/Tennis/tree/feature/2/services) This is the 2 branch, for submiting services only.
     3. [feature/3/end2end](https://github.com/2021-DEV1-075/Tennis/tree/feature/end2end) This is the 3 branch, for changes after end-to-end testing.
     ##### The Commits:
-      * feat(red): adding maven libs folder
-      * feat(red): added http://localhost:8080/swagger-ui.html ref at Swagger page and README.md
+      - feat(red): adding maven libs folder
+      - feat(red): added http://localhost:8080/swagger-ui.html ref at Swagger page and README.md
       - feat(red): format
       - feat(red): cleanning
       - feat(red): about TDD and the first branch at README and Swagger
