@@ -47,20 +47,18 @@ public class BoardController {
 
 	@ApiOperation(value = "Increases the player's 1 score against the board.")
 	@PutMapping(path = "/${boardId}/playeronescores", produces = "application/json")
-	public ResponseEntity<String> playerOneScores(
+	public ResponseEntity<Integer> playerOneScores(
 			@ApiParam(value = "Board Id", required = true) @PathVariable(name = "boardId") Long boardId)
 			throws BusinessException {
-		boardService.playerOneScores(boardId);
-		return ResponseEntity.ok("Ok");
+		return ResponseEntity.ok(boardService.playerOneScores(boardId));
 	}
 
 	@ApiOperation(value = "Increases the player's 2 score against the board.")
 	@PutMapping(path = "/${boardId}/playertwoscores", produces = "application/json")
-	public ResponseEntity<String> playerTwoScores(
+	public ResponseEntity<Integer> playerTwoScores(
 			@ApiParam(value = "Board Id", required = true) @PathVariable(name = "boardId") Long boardId)
 			throws BusinessException {
-		boardService.playerTwoScores(boardId);
-		return ResponseEntity.ok("Ok");
+		return ResponseEntity.ok(boardService.playerTwoScores(boardId));
 	}
 
 	@ApiOperation(value = "Creates the board for a new game set.", response = Board.class)

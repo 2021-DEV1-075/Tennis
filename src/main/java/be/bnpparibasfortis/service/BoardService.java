@@ -38,14 +38,14 @@ public class BoardService {
 				.orElseThrow(() -> new BusinessException(MessageSource.get().message(MessageEnum.ERR02, id)));
 	}
 
-	public void playerOneScores(Long boardId) throws BusinessException {
+	public Integer playerOneScores(Long boardId) throws BusinessException {
 		Board board = getById(boardId);
-		playerScores(board.getScoreOne());
+		return playerScores(board.getScoreOne());
 	}
 
-	public void playerTwoScores(Long boardId) throws BusinessException {
+	public Integer playerTwoScores(Long boardId) throws BusinessException {
 		Board board = getById(boardId);
-		playerScores(board.getScoreTwo());
+		return playerScores(board.getScoreTwo());
 	}
 
 	public String getStatusByBoardId(Long boardId) throws BusinessException {
@@ -94,8 +94,10 @@ public class BoardService {
 		return Boolean.FALSE;
 	}
 
-	private void playerScores(Score score) throws BusinessException {
+	private Integer playerScores(Score score) throws BusinessException {
 		Integer currentPoints = score.getPoints();
-		scoreService.update(score.getId(), currentPoints + INCREASE_AMOUNT);
+		Integer result = currentPoints + INCREASE_AMOUNT;
+		scoreService.update(score.getId(), result);
+		return result;
 	}
 }
